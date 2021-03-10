@@ -1,0 +1,70 @@
+<div id="question1" style="display: none;">
+    <h1>
+        Enter Array Values By Comma Seperated
+    </h1>
+    <div>
+        <form method="post" action="/answer/1">
+
+            <label> Array 1 </label>
+            <input id="array1" name="array1" required>
+
+            <br>
+
+            <label> Array 2 </label>
+            <input id="array2" name="array2" required>
+
+            <br>
+
+            <label> Array 3 </label>
+            <input id="array3" name="array3" required>
+
+            <br>
+
+            <input type="submit" class="btn">
+
+        </form>
+    </div>
+</div>
+
+<div id="question2" style="display: none;">
+    <h1>
+        Enter Number To Print Fibonacci series
+    </h1>
+    <div>
+        <form method="post" action="/answer/2">
+
+            <label> Enter Number </label>
+            <input id="num" name="num" required>
+
+            <br>
+
+            <input type="submit" class="btn">
+
+        </form>
+    </div>
+</div>
+
+<div id="asnwer">
+        {{#each answer as |item|}}
+        <li>
+            {{item}}
+        </li>
+        {{/each}}
+
+        {{!-- {{answer}} --}}
+</div>
+
+<script>
+    function questionShow(questionNum) {
+        console.log(questionNum);
+        if (questionNum === 1) {
+            document.getElementById('question1').style.display = 'block';
+            document.getElementById('question2').style.display = 'None';
+            document.getElementById('asnwer').innerHTML = ''
+        } else {
+            document.getElementById('question2').style.display = 'block';
+            document.getElementById('question1').style.display = 'None';
+            document.getElementById('asnwer').innerHTML = ''
+        }
+    }
+</script>
